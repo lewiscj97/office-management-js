@@ -41,9 +41,9 @@ class Office {
     return room.available;
   }
 
-  enter(roomName) {
+  enter(roomName, teamName = null, meetingName = null) {
     const room = this._findRoom(roomName);
-    room.enter();
+    room.enter(teamName, meetingName);
   }
 
   exit(roomName) {
