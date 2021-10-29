@@ -79,5 +79,13 @@ describe('Office', () => {
       office.enter('Room One');
       expect(office.allMeetingRooms()[0].available).toBe(false);
     });
+
+    it('Lets the user exit an occupied room and sets the room to available', () => {
+      office.enter('Room One');
+      expect(office.allMeetingRooms()[0].available).toBe(false);
+      
+      office.exit('Room One');
+      expect(office.allMeetingRooms()[0].available).toBe(true);
+    });
   });
 });

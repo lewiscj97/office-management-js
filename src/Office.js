@@ -30,6 +30,16 @@ class Office {
     const room = this._findRoom(roomName);
     return room.available;
   }
+
+  enter(roomName) {
+    const room = this._findRoom(roomName);
+    room.enter();
+  }
+
+  exit(roomName) {
+    const room = this._findRoom(roomName);
+    room.exit();
+  }
   
   _findRoom(roomName) {
     const room = this.rooms.find((value) => {
