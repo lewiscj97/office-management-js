@@ -109,6 +109,14 @@ describe('Office', () => {
       expect(room.currentMeeting.meetingName).toEqual('Retro');
       expect(room.currentMeeting.teamName).toEqual('Orange');
     });
+
+    it('Exiting room resets current meeting details', () => {
+      office.enter('Room One', 'Orange', 'Retro');
+      office.exit('Room One');
+
+      let room = office.allMeetingRooms()[0];
+      expect(room.currentMeeting).toEqual(null);
+    });
   });
 
   describe('List of available rooms', () => {
