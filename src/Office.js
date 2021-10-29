@@ -4,3 +4,9 @@ class Room {
     this.available = true;
   }
 }
+
+class Office {
+  constructor() {
+    this.rooms = [];
+  }
+}
