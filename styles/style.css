@@ -14,11 +14,12 @@ body {
 
 #book-room-container {
   text-align: center;
+  margin: 0%;
 }
 
 .button-container {
   text-align: center;
-  padding: 0 0 4%;
+  padding: 0 0 2%;
 }
 
 button {
@@ -35,7 +36,7 @@ button:hover {
 
 .room {
   border-style: solid;
-  margin: 5%;
+  margin: 1%;
   border-radius: 10px;
   background-color: #88AED0;
 }
@@ -47,17 +48,21 @@ button:hover {
 .text-input {
   padding: 6px;
   border-radius: 8px;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #booking-room {
   padding: 6px;
   border-radius: 8px;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .exit-button {
   margin-bottom: 10px;
+}
+
+#submit-booking {
+  margin: 0 0 100px;
 }
