@@ -19,6 +19,13 @@ describe('Room', () => {
       expect(room.available).toBe(false);
     });
   });
+
+  describe('Exit room', () => {
+    it('Sets room to available', () => {
+      room.exit();
+      expect(room.available).toBe(true);
+    });
+  });
 });
 
 describe('Office', () => {

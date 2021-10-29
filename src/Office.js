@@ -3,6 +3,14 @@ class Room {
     this.name = name;
     this.available = true;
   }
+
+  enter() {
+    this.available = false;
+  }
+
+  exit() {
+    this.available = true;
+  }
 }
 
 class Office {
