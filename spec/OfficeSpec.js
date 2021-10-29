@@ -95,6 +95,14 @@ describe('Office', () => {
       office.exit('Room One');
       expect(office.allMeetingRooms()[0].available).toBe(true);
     });
+
+    it('Enters a room and is passed the meeting name and team name', () => {
+      office.enter('Room One', 'Orange', 'Retro');
+      let room = office.allMeetingRooms()[0];
+      expect(room.currentMeeting).toBe(true);
+      expect(room.currentMeeting.meetingName).toEqual('Retro');
+      expect(room.currentMeeting.teamName).toEqual('Orange');
+    });
   });
 
   describe('List of available rooms', () => {
