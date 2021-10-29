@@ -15,12 +15,12 @@ describe('Room', () => {
 });
 
 describe('Office', () => {
-  describe('Adding meeting rooms', () => {
-    beforeEach(() => {
-      room = new Room('Room One');
-      office = new Office();
-    });
+  beforeEach(() => {
+    room = new Room('Room One');
+    office = new Office();
+  });
 
+  describe('Adding meeting rooms', () => {
     it('Has no meeting rooms initially', () => {
       expect(office.rooms).toEqual([]);
     });
@@ -28,6 +28,12 @@ describe('Office', () => {
     it('Can add a new room', () => {
       office.addMeetingRoom('Room One');
       expect(office.rooms[0]).toEqual(room);
+    });
+  });
+
+  describe('Viewing meeting rooms', () => {
+    it('Returns an empty array initially', () => {
+      expect(office.allMeetingRooms()).toEqual([]);
     });
   });
 });
