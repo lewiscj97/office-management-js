@@ -97,7 +97,7 @@ describe('Office', () => {
       office.addMeetingRoom('Room Three');
     });
 
-    it('It returns a list of all rooms when they are all available', () => {
+    it('Returns a list of all rooms when they are all available', () => {
       let rooms = office.availableRooms();
 
       expect(rooms.length).toEqual(3);
@@ -107,6 +107,16 @@ describe('Office', () => {
       expect(rooms[1].available).toBe(true);
       expect(rooms[2].name).toEqual('Room Three');
       expect(rooms[2].available).toBe(true);
+    });
+
+    it('Returns list of available rooms when some rooms unavaiable', () => {
+      office.enter('Room One');
+      let rooms = office.availableRooms();
+      expect(rooms.length).toEqual(2);
+      expect(rooms[0].name).toEqual('Room Two');
+      expect(rooms[0].available).toBe(true);
+      expect(rooms[1].name).toEqual('Room Three');
+      expect(rooms[1].available).toBe(true);
     });
   });
 });
