@@ -67,3 +67,11 @@ button:hover {
 #submit-booking {
   margin: 0 0 100px;
 }
+
+.room-available {
+  color: rgb(19, 136, 68);
+}
+
+.room-unavailable {
+  color: rgb(163, 87, 87);
+}

@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // availability
       const availability = document.createElement('p');
       availability.innerText += room.available ? 'Available' : 'Unavailable';
-      availability.className = 'room-availability';
+      room.available ? availability.className = 'room-available' : availability.className = 'room-unavailable'
       div.appendChild(availability);
 
       // show meeting details if occupied
