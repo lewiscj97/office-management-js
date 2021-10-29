@@ -119,4 +119,13 @@ describe('Office', () => {
       expect(rooms[1].available).toBe(true);
     });
   });
+
+  describe('Meetings', () => {
+    it('Has a team name and a meeting name', () => {
+      let meeting = new Meeting(teamName ='Orange', meetingName = 'Retro');
+      
+      expect(meeting.teamName).toEqual('Orange');
+      expect(meeting.meetingName).toEqual('Retro');
+    });
+  });
 });

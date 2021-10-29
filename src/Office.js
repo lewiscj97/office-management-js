@@ -1,3 +1,10 @@
+class Meeting {
+  constructor(teamName, meetingName) {
+    this.teamName = teamName;
+    this.meetingName = meetingName;
+  }
+}
+
 class Room {
   constructor(name) {
     this.name = name;
