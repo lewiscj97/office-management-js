@@ -32,9 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
       div.appendChild(availability);
 
       // booking
-      const booking = document.createElement('button');
-      booking.setAttribute('id', '#room-booking');
-      div.appendChild(booking);
+      const bookingButton = document.createElement('button');
+      bookingButton.setAttribute('id', '#room-booking');
+      bookingButton.innerText += room.available ? 'Enter' : 'Exit';
+      div.appendChild(bookingButton);
 
       // add div to container
       container.appendChild(div);
