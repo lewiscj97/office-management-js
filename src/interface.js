@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (roomAvailability == true) {
         office.enter(roomName);
+        console.log(`Entering ${roomName}`);
       } else {
         office.exit(roomName);
+        console.log(`Exiting ${roomName}`);
       }
       displayRooms();
     });
