@@ -20,8 +20,8 @@ describe('Room', () => {
     });
 
     it('Can be passed the team name and meeting name, storing as a meeting', () => {
-      room.enter(teamName = 'Orange', meetingName = 'Retro');
-      let currentMeeting = room.meeting;
+      room.enter('Orange', 'Retro');
+      let currentMeeting = room.currentMeeting;
       
       expect(currentMeeting.teamName).toEqual('Orange');
       expect(currentMeeting.meetingName).toEqual('Retro');

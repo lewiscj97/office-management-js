@@ -9,10 +9,13 @@ class Room {
   constructor(name) {
     this.name = name;
     this.available = true;
+    this.currentMeeting = null;
   }
 
-  enter() {
+  enter(teamName = null, meetingName = null) {
     this.available = false;
+    const meeting = new Meeting(teamName, meetingName);
+    this.currentMeeting = meeting;
   }
 
   exit() {
