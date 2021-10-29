@@ -13,4 +13,8 @@ class Office {
   addMeetingRoom(roomName) {
     this.rooms.push(new Room(roomName));
   }
+
+  allMeetingRooms() {
+    return this.rooms;
+  }
 }

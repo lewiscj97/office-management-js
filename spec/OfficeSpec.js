@@ -35,5 +35,10 @@ describe('Office', () => {
     it('Returns an empty array initially', () => {
       expect(office.allMeetingRooms()).toEqual([]);
     });
+
+    it('Returns an array containing a room when rooms have been added', () => {
+      office.addMeetingRoom('Room One');
+      expect(office.allMeetingRooms()[0]).toEqual(room);
+    })
   });
 });
