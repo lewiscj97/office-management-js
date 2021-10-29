@@ -1,35 +1,20 @@
 # Office Management - JavaScript
-## Plan
+## Setup
 
-1. Test drive `Room` and `Office` classes
-2. Ensure that the classes work in the browser console
-3. Build a static website for creating a new office, adding rooms, entering rooms, etc.
+1. Clone the repo (`git clone git@github.com:lewiscj97/office-management-js.git`)
+2. run `open index.html` within the project directory
 
-## Object model
+## Usage
 
-Very basic model for the different classes and the different attributes and methods they require.
+- Three rooms (Room 1, Room 2 and Room 3) are added by default to the office
+- New rooms can be added by clicking `Add New Room`, filling out the room name and clicking `Submit`
+- Room bookings are made by clicking `Book a Room`, selecting which room to be booked, and entering the team and meeting names
+  - **Note: at this stage, there is nothing to stop these fields from being left blank - this should be implemented at a later date**
+- The booking form will only let the user book rooms that are currently available, and if there are no available rooms the form will not be shown
+- Rooms must be exited by clicking the `Exit` button within the room section in order to make them available again
 
-### `Room`
+## Improvement Points
 
-- name
-- available
-
-### `Office`
-
-- `addMeetingRoom()`
-- `allMeetingRooms()` (lists all rooms)
-- `checkAvailability(room)` (returns true or false)
-- `enterRoom(room)` (makes room unavailable)
-- `leaveRoom(room)` (makes room available)
-- `allAvailableRooms()`
-
-### `Meeting` (stretch)
-
-- teamName
-- meetingName
-
-### Notes
-
-- Test drive `Room` class first, then the `Office` and test in browser (MVP)
-- Test drive `Meeting` class and integrate with the MVP, test in browser
-- Build website and make functional with the classes
+- Make all text fields required
+- Add backend API for saving state of the office
+- Add users: office manager for adding rooms, employee for booking rooms
