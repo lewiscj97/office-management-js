@@ -47,5 +47,11 @@ describe('Office', () => {
       office.addMeetingRoom('Room One');
       expect(office.isAvailable('Room One')).toBe(true);
     });
+
+    it('Returns false if the meeting room is unavailable', () => {
+      office.addMeetingRoom('Room One');
+      office.rooms[0].available = false;
+      expect(office.isAvailable('Room One')).toBe(false);
+    });
   });
 });
