@@ -88,4 +88,25 @@ describe('Office', () => {
       expect(office.allMeetingRooms()[0].available).toBe(true);
     });
   });
+
+  describe('List of available rooms', () => {
+    beforeEach(() => {
+      office = new Office();
+      office.addMeetingRoom('Room One');
+      office.addMeetingRoom('Room Two');
+      office.addMeetingRoom('Room Three');
+    });
+
+    it('It returns a list of all rooms when they are all available', () => {
+      let rooms = office.availableRooms();
+
+      expect(rooms.length).toEqual(3);
+      expect(rooms[0].name).toEqual('Room One');
+      expect(rooms[0].available).toBe(true);
+      expect(rooms[1].name).toEqual('Room Two');
+      expect(rooms[1].available).toBe(true);
+      expect(rooms[2].name).toEqual('Room Three');
+      expect(rooms[2].available).toBe(true);
+    });
+  });
 });
