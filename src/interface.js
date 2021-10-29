@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // button to exit
         const button = document.createElement('button');
         button.setAttribute('id', 'exit-room');
+        button.className = 'exit-button'
         button.innerText += 'Exit';
         button.addEventListener('click', () => {
           office.exit(room.name);
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hideNewRoomContainer();
   });
 
-  // Show form for adding new room on click
+  // Toggle room booking form
   document.querySelector('#booking-toggle').addEventListener('click', () => {
     toggleBookRoomContainer();
   });
@@ -104,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayRooms();
   });
 
+  // Book a room
   document.querySelector('#submit-booking').addEventListener('click', () => {
     const teamName = document.querySelector('#team-name');
     const meetingName = document.querySelector('#meeting-name');

@@ -8,28 +8,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./src/Office.js"></script>
     <script src="./src/interface.js"></script>
+    <link rel="stylesheet" href="/styles/style.css">
   </head>
   <body>
     <h1>Office Management</h1>
-    <button id="add-new-room">Add New Room</button>
+    <div class="button-container">
+      <button id="add-new-room">Add New Room</button>
+    </div>
     <div id="new-room-container" style="display: none">
-      <input type="text" name="room-name" id="room-name">
-      <input id="new-room-submit" type="submit" value="Submit">
+      <input class="text-input" type="text" name="room-name" id="room-name">
+      <button id="new-room-submit" type="submit" value="Submit">Submit</button>
     </div>
     <div id="rooms">
       <h2>Rooms</h2>
       <section id="rooms-container">
       </section>
     </div>
-    <button id="booking-toggle">Book a Room</button>
+    <div class="button-container">
+      <button id="booking-toggle">Book a Room</button>
+    </div>
     <div id="book-room-container" style="display: none">
       <select name="booking-room" id="booking-room">
-      </select>
+      </select><br>
       <label for="team-name">Team name: </label>
-      <input type="text" name="team-name" id="team-name">
+      <input class="text-input" type="text" name="team-name" id="team-name"><br>
       <label for="meeting-name">Meeting name: </label>
-      <input type="text" name="meeting-name" id="meeting-name">
-      <input type="submit" value="Submit" id="submit-booking">
+      <input class="text-input" type="text" name="meeting-name" id="meeting-name"><br>
+      <button id="submit-booking">Submit</button>
     </div>
   </body>
 </html>
