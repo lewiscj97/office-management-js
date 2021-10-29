@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // booking
       const bookingButton = document.createElement('button');
-      bookingButton.setAttribute('id', '#room-booking');
+      bookingButton.className = 'booking-button';
       bookingButton.innerText += room.available ? 'Enter' : 'Exit';
       div.appendChild(bookingButton);
 
@@ -63,5 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
     roomName.value = '';
     hideNewRoomContainer();
     displayRooms();
+  });
+
+  // Enter or exit room
+  document.querySelectorAll('.booking-button').forEach(item => {
+    item.addEventListener('click', () => {
+      const parent = item.parentNode;
+      const roomName = parent.querySelector('.room-name').innerText;
+      const roomAvailability = parent.querySelector('.room-availability').innerText === 'Available';
+
+      if (roomAvailability == true) {
+        office.enter(roomName);
+      } else {
+        office.exit(roomName);
+      }
+      displayRooms();
+    });
   });
 });
