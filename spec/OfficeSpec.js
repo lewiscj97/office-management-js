@@ -12,6 +12,13 @@ describe('Room', () => {
       expect(room.available).toBe(true);
     });
   });
+
+  describe('Enter room', () => {
+    it('Sets room to unavailable', () => {
+      room.enter();
+      expect(room.available).toBe(false);
+    });
+  });
 });
 
 describe('Office', () => {
