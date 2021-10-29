@@ -20,6 +20,7 @@ class Room {
 
   exit() {
     this.available = true;
+    this.currentMeeting = null;
   }
 }
 

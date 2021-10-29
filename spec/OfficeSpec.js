@@ -33,6 +33,12 @@ describe('Room', () => {
       room.exit();
       expect(room.available).toBe(true);
     });
+
+    it('Sets current meeting to null', () => {
+      room.enter('Orange', 'Retro');
+      room.exit();
+      expect(room.currentMeeting).toBe(null);
+    })
   });
 });
 
