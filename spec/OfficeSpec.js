@@ -68,4 +68,16 @@ describe('Office', () => {
       expect(office.isAvailable('Room One')).toBe(false);
     });
   });
+
+  describe('Entering and exiting rooms', () => {
+    beforeEach(() => {
+      office = new Office();
+      office.addMeetingRoom('Room One');
+    });
+
+    it('Lets the user enter a room and sets room to unavaiable', () => {
+      office.enter('Room One');
+      expect(office.allMeetingRooms()[0].available).toBe(false);
+    });
+  });
 });
