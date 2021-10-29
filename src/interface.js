@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const toggleBookRoomContainer = () => {
-    const container = document.querySelector('#book-room-container')
-    if (container.style.display === "none") {
+    const container = document.querySelector('#book-room-container'); 
+    if (container.style.display === "none" && office.availableRooms().length != 0) {
       container.style.display = "block";
     } else {
       container.style.display = "none";
