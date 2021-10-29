@@ -8,6 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Enter or exit room
+  const addButtons = () => {
+    document.querySelectorAll('.booking-button').forEach(item => {
+    item.addEventListener('click', () => {
+      const parent = item.parentNode;
+      const roomName = parent.querySelector('.room-name').innerText;
+      const roomAvailability = parent.querySelector('.room-availability').innerText === 'Available';
+
+      if (roomAvailability == true) {
+        office.enter(roomName);
+      } else {
+        office.exit(roomName);
+      }
+      displayRooms();
+    });
+  })};
+
   // Display rooms
   const displayRooms = () => {
     const container = document.querySelector('#rooms-container');
@@ -40,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // add div to container
       container.appendChild(div);
     });
+    addButtons();
   }
 
   // Populate office with some default rooms
@@ -63,21 +81,5 @@ document.addEventListener('DOMContentLoaded', () => {
     roomName.value = '';
     hideNewRoomContainer();
     displayRooms();
-  });
-
-  // Enter or exit room
-  document.querySelectorAll('.booking-button').forEach(item => {
-    item.addEventListener('click', () => {
-      const parent = item.parentNode;
-      const roomName = parent.querySelector('.room-name').innerText;
-      const roomAvailability = parent.querySelector('.room-availability').innerText === 'Available';
-
-      if (roomAvailability == true) {
-        office.enter(roomName);
-      } else {
-        office.exit(roomName);
-      }
-      displayRooms();
-    });
   });
 });
