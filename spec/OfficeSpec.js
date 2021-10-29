@@ -39,6 +39,13 @@ describe('Office', () => {
     it('Returns an array containing a room when rooms have been added', () => {
       office.addMeetingRoom('Room One');
       expect(office.allMeetingRooms()[0]).toEqual(room);
-    })
+    });
+  });
+
+  describe('Check availability of room', () => {
+    it('Returns true if the meeting room is available', () => {
+      office.addMeetingRoom('Room One');
+      expect(office.isAvailable('Room One')).toBe(true);
+    });
   });
 });
