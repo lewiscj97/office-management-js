@@ -15,14 +15,19 @@ describe('Room', () => {
 });
 
 describe('Office', () => {
-  describe('Add meeting room', () => {
+  describe('Adding meeting rooms', () => {
     beforeEach(() => {
       room = new Room('Room One');
+      office = new Office();
     });
 
-    it('Office has no meeting rooms initially', () => {
-      office = new Office();
+    it('Has no meeting rooms initially', () => {
       expect(office.rooms).toEqual([]);
+    });
+
+    it('Can add a new room', () => {
+      office.addMeetingRoom('Room One');
+      expect(office.rooms[0]).toEqual(room);
     });
   });
 });
