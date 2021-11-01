@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const hideNewRoomContainer = () => {
+    // same as below re: ternary, do love how clean this looks for being js DOM stuff
     const container = document.querySelector('#new-room-container')
     if (container.style.display === "none") {
       container.style.display = "block";
@@ -10,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const toggleBookRoomContainer = () => {
     const container = document.querySelector('#book-room-container'); 
+    // could refactor to 
+    // container.style.display = container.style.display === "none" && office.availableRooms().length != 0 ? 'block' : 'none'
+    // tbh it is a lot for one line, but i just love ternarys
     if (container.style.display === "none" && office.availableRooms().length != 0) {
       container.style.display = "block";
     } else {
@@ -24,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bookingForm.innerHTML = '';
     container.innerHTML = '';
     const rooms = office.allMeetingRooms();
+    // love the belowß
     rooms.forEach((room, index) => {
       // Create div element
       const div = document.createElement('div');
@@ -43,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
       div.appendChild(availability);
 
       // show meeting details if occupied
+      // i think just !room.currentMeeting would work here, 
+      // but if it was an empty string, it would also evaluate to false.
+      // looking at the other code, i'm guessing it cant be an empty string?
       if (room.currentMeeting != null) {
         const meetingDetails = document.createElement('div');
         meetingDetails.className = 'meeting-details';
